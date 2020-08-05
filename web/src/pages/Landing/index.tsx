@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import api from '../../services/api';
 
 import './styles.css';
 
@@ -10,6 +12,28 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 
 const Landing: React.FC = () => {
+
+    const [getTotalConnections, setTotalConnections] = useState<number>();
+
+    useEffect( () => {
+
+        fetchConnections();
+
+    }, []);
+
+    async function fetchConnections(){
+
+        try {
+
+            const response = await api.get('/connections');
+
+            setTotalConnections(response.data.total);
+            
+        } catch (error) {
+            console.log(error);
+            alert('Erro ao buscar conexões');
+        }
+    }
 
     return (
         <div id="page-landing">
@@ -47,7 +71,7 @@ const Landing: React.FC = () => {
                 </div>
 
                 <span className='total-connections'>
-                    Total de 200 conexões já realizadas <img src={purpleHeartIcon} alt="coração roxo" />
+                    Total de {getTotalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="coração roxo" />
                 </span>
             </div>
         </div>

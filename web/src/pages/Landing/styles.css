@@ -87,7 +87,7 @@
     background: var(--color-secundary-dark);
 }
 
-.total-connections {
+#page-landing-content .total-connections {
     font-size: 1.4rem;
 
     display: flex;
@@ -95,12 +95,13 @@
     align-items: center;
 }
 
-.total-connections img {
+#page-landing-content .total-connections img {
     margin-left: 0.8rem;
 }
 
 @media (min-width: 1100px) {
-    #page-landing-content {
+    div#page-landing-content {
+        width: 100%;
         max-width: 1100px;
 
         display: grid;
