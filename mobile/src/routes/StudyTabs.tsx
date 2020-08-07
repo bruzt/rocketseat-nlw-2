@@ -5,6 +5,12 @@ import { Ionicons } from '@expo/vector-icons';
 import TeacherList from '../pages/TeacherList';
 import Favorites from '../pages/Favorites';
 
+interface ITabBarIconProps {
+    color: string;
+    size: number;
+    focused: boolean;
+}
+
 const StudyTabs: React.FC = () => {
 
     const { Navigator, Screen } = createBottomTabNavigator();
@@ -44,7 +50,7 @@ const StudyTabs: React.FC = () => {
                 component={TeacherList} 
                 options={{
                     tabBarLabel: 'Proffys',
-                    tabBarIcon: ({ color, size, focused }) => (
+                    tabBarIcon: ({ color, size, focused }: ITabBarIconProps) => (
                         <Ionicons name='ios-easel' size={size} color={(focused) ? '#8257e5' : color} />
                     ),
                 }}
@@ -54,7 +60,7 @@ const StudyTabs: React.FC = () => {
                 component={Favorites} 
                 options={{
                     tabBarLabel: 'Favoritos',
-                    tabBarIcon: ({ color, size, focused }) => (
+                    tabBarIcon: ({ color, size, focused }: ITabBarIconProps) => (
                         <Ionicons name='ios-heart' size={size} color={(focused) ? '#8257e5' : color} />
                     ),
                 }}

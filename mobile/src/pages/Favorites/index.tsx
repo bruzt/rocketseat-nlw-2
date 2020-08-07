@@ -3,10 +3,14 @@ import { View, ScrollView } from 'react-native';
 
 import styles from './styles';
 
+import { useFavorites } from '../../context/FavoritesContext';
+
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 
 const Favorites: React.FC = () => {
+
+    const favoriteContext = useFavorites();
 
     return (
         <View style={styles.container}>
@@ -19,11 +23,13 @@ const Favorites: React.FC = () => {
                     paddingBottom: 16
                 }}
             >
-               
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
-                <TeacherItem />
+
+                {favoriteContext.getFavorites.map((favorite) => (
+                    <TeacherItem
+                        key={favorite.id}
+                        data={favorite}
+                    />
+                ))}
 
             </ScrollView>
         </View>

@@ -1,9 +1,10 @@
-import React from 'react';
-import { View, Image, Text } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Image, Text, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
  
 import styles from './styles';
+import api from '../../services/api';
 
 import landingImg from '../../assets/images/landing.png';
 import studyIcon from '../../assets/images/icons/study.png';
@@ -12,7 +13,29 @@ import heartIcon from '../../assets/images/icons/heart.png';
 
 const Landing: React.FC = () => {
 
+    const [getTotalConnections, setTotalConnections] = useState<number>(0);
+
     const navigation = useNavigation();
+
+    useEffect( () => {
+
+        fetchTotalConnections();
+
+    }, []);
+
+    async function fetchTotalConnections(){
+
+        try {
+
+            const response = await api.get('/connections');
+
+            setTotalConnections(response.data.total);
+            
+        } catch (error) {
+            console.log(error);
+            Alert.alert('Erro', 'Erro ao buscar total de conexões');
+        }
+    }
 
     return (
         <View style={styles.container}>
@@ -44,7 +67,7 @@ const Landing: React.FC = () => {
             </View>
 
             <Text style={styles.totalConnections}>
-                Total de 99 conexões já realizadas. {' '}
+                Total de {getTotalConnections} conexões já realizadas. {' '}
                 <Image source={heartIcon} />
             </Text>
         </View>

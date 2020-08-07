@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
 
     searchForm: {
-        marginBottom: 8,
+        marginBottom: 24,
     },
 
     label: {
@@ -21,13 +21,24 @@ const styles = StyleSheet.create({
     },
 
     input: {
-        height: 54,
+        /*height: 54,
         backgroundColor: '#fff',
         borderRadius: 8,
         justifyContent: 'center',
         paddingHorizontal: 16,
         marginTop: 4,
-        marginBottom: 16,
+        marginBottom: 16,*/
+
+        height: 50,
+        paddingTop: 16,
+        paddingRight: 17,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+
+    inputText: {
+        color: '#d4c2ff',
+        overflow: 'hidden'
     },
 
     inputGroup: {
@@ -37,6 +48,21 @@ const styles = StyleSheet.create({
 
     inputBlock: {
         width: '48%'
+    },
+
+    submitButton: {
+        backgroundColor: '#04d361',
+        flexDirection: 'row',
+        height: 56,
+        borderRadius: 8,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    submitButtonText: {
+        color: '#fff',
+        fontFamily: 'Archivo_700Bold',
+        fontSize: 16,
     }
 });
 

@@ -20,6 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/display-name": "off"
+        "react/display-name": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 }
