@@ -10,3 +10,6 @@ A proposta é criar uma interface web responsiva utilizando o conceito mobile fi
 <p align="center">
   <img src="https://github.com/bruzt/rocketseat-nlw-2-omnistack/blob/master/nlw2-2.gif?raw=true">
 </p>
+<p align="center">
+  <img src="https://github.com/bruzt/rocketseat-nlw-2-omnistack/blob/master/nlw2-3.gif?raw=true">
+</p>
