@@ -1,1 +1,7 @@
 /node_modules
+/coverage
+.env
+
+database.sqlite
+devDatabase.sqlite
+testDatabase.sqlite
