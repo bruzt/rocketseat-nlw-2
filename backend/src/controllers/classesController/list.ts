@@ -13,10 +13,6 @@ export default async (req: Request, res: Response) => {
 
     const filters: IIndexFilters = req.query as any;
 
-    if(!filters.week_day || !filters.subject || !filters.time) {
-        return res.status(400).json({ message: 'missing one or more filters to search classes' });
-    }
-
     const timeToMinutes = convertHourToMinutes(filters.time);
 
     try {

@@ -65,6 +65,7 @@ describe('Classes Controller List test suit', () => {
         const response = await superstest(app).get(`/classes`);
         
         expect(response.status).toBe(400);
-        expect(response.body.message).toBe('missing one or more filters to search classes');
+        expect(response.body.validation.source).toBe('query');
+        expect(response.body.validation.keys).toStrictEqual(["week_day", "subject", "time"]);
     });
 });

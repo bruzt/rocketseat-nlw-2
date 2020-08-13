@@ -7,19 +7,18 @@
     "start": "npm run prod",
     "dev": "cross-env NODE_ENV=dev ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "prod": "cross-env NODE_ENV=prod ts-node src/server.ts",
-
     "dev:migrate:latest": "cross-env NODE_ENV=dev knex --knexfile knexfile.ts migrate:latest",
     "dev:migrate:rollback": "cross-env NODE_ENV=dev knex --knexfile knexfile.ts migrate:rollback",
     "prod:migrate:latest": "cross-env NODE_ENV=prod knex --knexfile knexfile.ts migrate:latest",
     "prod:migrate:rollback": "cross-env NODE_ENV=prod knex --knexfile knexfile.ts migrate:rollback",
     "test:migrate:latest": "cross-env NODE_ENV=test knex --knexfile knexfile.ts migrate:latest",
     "test:migrate:rollback": "cross-env NODE_ENV=test knex --knexfile knexfile.ts migrate:rollback",
-    
     "test": "cross-env NODE_ENV=test jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "celebrate": "^12.2.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
