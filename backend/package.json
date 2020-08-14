@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run prod",
     "dev": "cross-env NODE_ENV=dev ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "prod": "cross-env NODE_ENV=prod ts-node src/server.ts",
+    "prod": "cross-env NODE_ENV=prod ts-node --transpile-only src/server.ts",
     "dev:migrate:latest": "cross-env NODE_ENV=dev knex --knexfile knexfile.ts migrate:latest",
     "dev:migrate:rollback": "cross-env NODE_ENV=dev knex --knexfile knexfile.ts migrate:rollback",
     "prod:migrate:latest": "cross-env NODE_ENV=prod knex --knexfile knexfile.ts migrate:latest",
